@@ -1,0 +1,13 @@
+.prex(@prop:box-sizing,@val: border-box){
+	-webkit-@{prop} : @val;
+	-moz-@{prop} : @val;
+	-ms-@{prop} : @val;
+	-o-@{prop} : @val;
+	@{prop}: @val;
+}	
+
+.font-size(@size: 16){
+	@rem: @size / 16;
+	font-size: @size * 1px;
+	font-size: ~'@{rem}rem';
+}
