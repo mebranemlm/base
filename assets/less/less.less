@@ -41,7 +41,7 @@ body{
 
 #texto1{
     background-color:#37FFE5;
-    
+
     .prex(box-shadow, 1px 1px 1px rgba(0,0,0,0.5));
     &::before{
       content: '@{ba_content}Before';
@@ -89,4 +89,11 @@ aside{
     // .prex(@prop:box-sizing,@value:border-box);
     .prex();
     .font-size(32);
+}
+
+.boton{
+    @azul: darken(#337ab7,15);
+    @verdeazul: rgb(76,166,177);
+    // .boton(@bgcolor:@verdeazul,10);
+    .boton();
 }
