@@ -1,1 +1,67 @@
-body{background-color:rgba(158,224,239,.394)}
+/*@import 'reset.less';*/
+body {
+  background-color: black;
+  padding: 0px !important;
+}
+body header,
+body content,
+body aside,
+body footer {
+  margin: 0px;
+  padding: 5px;
+}
+body header {
+  background-color: #12b916;
+  width: 97%;
+  height: 100px;
+}
+body content {
+  background-color: #0642c5;
+  width: 68%;
+  float: left;
+  height: 450px;
+}
+body aside {
+  background-color: #c50606;
+  width: 28%;
+  float: left;
+  height: 450px;
+}
+body footer {
+  background-color: #faf614;
+  width: 100%;
+  height: 100px;
+  float: left;
+  overflow: hidden;
+}
+#texto1 {
+  background-color: #37FFE5;
+}
+#texto1::before {
+  content: 'Contenido Before';
+}
+#texto1::after {
+  content: 'Contenido After';
+}
+#texto1::before,
+#texto1::after {
+  font-family: serif;
+  font-weight: bold;
+  color: blue;
+}
+#funciones #round_up::before,
+#funciones #round_down::before,
+#funciones #round_up::after,
+#funciones #round_down::after {
+  color: yellow;
+}
+#funciones #round_up::before,
+#funciones #round_down::before {
+  content: '1.46343433';
+}
+#funciones #round_up::after {
+  content: '2';
+}
+#funciones #round_down::after {
+  content: '1';
+}
