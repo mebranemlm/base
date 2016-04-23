@@ -63,3 +63,16 @@ btnCondicional.addEventListener('click',function(){
 	var ternario = condicion ? 'Verdadero': 'Falso';
 	console.log('El valor ternario es',ternario);
 });
+
+var objConstructor= document.getElementById('objConstructor');
+function Persona (nombre, apellido){
+	this.nomb=nombre;
+	this.apel=apellido;
+}
+
+objConstructor.addEventListener('click',function(){
+	var persona1 = new Persona('Pedro', 'Torres');
+	console.log(persona1);
+	console.log(persona1.nomb);
+	console.log(persona1.apel);
+});
