@@ -52,9 +52,14 @@ btnCondicional.addEventListener('click',function(){
 		console.log('sinvalor','', 'F');
 	}
 
-	if(noexiste){
-		console.log('noexiste','', 'V');
-	}else{
-		console.log('noexiste','', 'F');
-	}
+	// if(noexiste){
+	// 	console.log('noexiste','', 'V');
+	// }else{
+	// 	console.log('noexiste','', 'F');
+	// }
+
+	//OPERACIÓN TERNARIA
+	var condicion =false;
+	var ternario = condicion ? 'Verdadero': 'Falso';
+	console.log('El valor ternario es',ternario);
 });
