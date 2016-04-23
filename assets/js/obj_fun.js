@@ -14,7 +14,11 @@ var tienda={
 // console.log(tienda.calcular(20,32));
 // console.log(tienda.saludar());
 
-var btnSaludar = document.getElementById('btnSaludar');
+var btnSaludar 
+	= document.getElementById('btnSaludar');
+
+var btnCondicional 
+	= document.getElementById('btnCondicional');
  
 btnSaludar.addEventListener('click',function(){
  	// console.log(tienda.saludar());
@@ -22,3 +26,34 @@ btnSaludar.addEventListener('click',function(){
  		console.log(dato,tienda[dato])
  	}
  });
+
+btnCondicional.addEventListener('click',function(){
+	var condicionales ={ 
+		nulo: null,
+		vacio: '',
+		espacio: ' ',
+		verdadero: true,
+		falso: false
+	}
+
+	for (dato in condicionales){
+		if(condicionales[dato]){
+			console.log(dato,condicionales[dato],'V');
+		}else{
+			console.log(dato,condicionales[dato],'F');
+		}
+	}
+
+	var sinvalor;
+	if(sinvalor){
+		console.log('sinvalor','', 'V');
+	}else{
+		console.log('sinvalor','', 'F');
+	}
+
+	if(noexiste){
+		console.log('noexiste','', 'V');
+	}else{
+		console.log('noexiste','', 'F');
+	}
+});
