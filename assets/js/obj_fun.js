@@ -33,7 +33,8 @@ btnCondicional.addEventListener('click',function(){
 		vacio: '',
 		espacio: ' ',
 		verdadero: true,
-		falso: false
+		falso: false,
+		funcion: function(){}
 	}
 
 	for (dato in condicionales){
