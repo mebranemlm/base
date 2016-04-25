@@ -119,3 +119,12 @@ $('#fnJoinAndConcat').click(function(){
     console.log(pais.concat(', '));
 
 });
+
+var tiempo= 'Tiempo: ';
+console.time(tiempo);
+
+for (var i = 0; i < 100; i++) {
+    var x=1;
+}
+
+console.timeEnd(tiempo);
