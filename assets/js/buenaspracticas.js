@@ -81,6 +81,9 @@ objConstructor.addEventListener('click', function() {
 //Variables ---> palabra1_palabra2 (SnakeCase)
 //Constantes --> PALABRA1_PALABRA2
 
+
+//USANDO JSON
+
 $('#objJSON').click(function(){
     $.getJSON('assets/json/productos.json',function(productos){
         // console.log(productos);
