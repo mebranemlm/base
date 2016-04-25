@@ -1,0 +1,138 @@
+{
+    "query": {
+        "count": 1,
+        "created": "2016-04-25T06:36:18Z",
+        "lang": "es-ES",
+        "results": {
+            "channel": {
+                "units": {
+                    "distance": "mi",
+                    "pressure": "in",
+                    "speed": "mph",
+                    "temperature": "F"
+                },
+                "title": "Yahoo! Weather - Nome, AK, US",
+                "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+                "description": "Yahoo! Weather for Nome, AK, US",
+                "language": "en-us",
+                "lastBuildDate": "Sun, 24 Apr 2016 10:36 PM AKDT",
+                "ttl": "60",
+                "location": {
+                    "city": "Nome",
+                    "country": "United States",
+                    "region": " AK"
+                },
+                "wind": {
+                    "chill": "34",
+                    "direction": "23",
+                    "speed": "11"
+                },
+                "atmosphere": {
+                    "humidity": "71",
+                    "pressure": "1009.0",
+                    "rising": "0",
+                    "visibility": "16.1"
+                },
+                "astronomy": {
+                    "sunrise": "6:52 am",
+                    "sunset": "11:9 pm"
+                },
+                "image": {
+                    "title": "Yahoo! Weather",
+                    "width": "142",
+                    "height": "18",
+                    "link": "http://weather.yahoo.com",
+                    "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+                },
+                "item": {
+                    "title": "Conditions for Nome, AK, US at 09:00 PM AKDT",
+                    "lat": "64.499474",
+                    "long": "-165.405792",
+                    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+                    "pubDate": "Sun, 24 Apr 2016 09:00 PM AKDT",
+                    "condition": {
+                        "code": "32",
+                        "date": "Sun, 24 Apr 2016 09:00 PM AKDT",
+                        "temp": "38",
+                        "text": "Sunny"
+                    },
+                    "forecast": [{
+                        "code": "32",
+                        "date": "24 Apr 2016",
+                        "day": "Sun",
+                        "high": "43",
+                        "low": "25",
+                        "text": "Sunny"
+                    }, {
+                        "code": "30",
+                        "date": "25 Apr 2016",
+                        "day": "Mon",
+                        "high": "44",
+                        "low": "29",
+                        "text": "Partly Cloudy"
+                    }, {
+                        "code": "30",
+                        "date": "26 Apr 2016",
+                        "day": "Tue",
+                        "high": "47",
+                        "low": "34",
+                        "text": "Partly Cloudy"
+                    }, {
+                        "code": "28",
+                        "date": "27 Apr 2016",
+                        "day": "Wed",
+                        "high": "49",
+                        "low": "35",
+                        "text": "Mostly Cloudy"
+                    }, {
+                        "code": "30",
+                        "date": "28 Apr 2016",
+                        "day": "Thu",
+                        "high": "47",
+                        "low": "33",
+                        "text": "Partly Cloudy"
+                    }, {
+                        "code": "32",
+                        "date": "29 Apr 2016",
+                        "day": "Fri",
+                        "high": "49",
+                        "low": "32",
+                        "text": "Sunny"
+                    }, {
+                        "code": "30",
+                        "date": "30 Apr 2016",
+                        "day": "Sat",
+                        "high": "42",
+                        "low": "36",
+                        "text": "Partly Cloudy"
+                    }, {
+                        "code": "28",
+                        "date": "01 May 2016",
+                        "day": "Sun",
+                        "high": "39",
+                        "low": "31",
+                        "text": "Mostly Cloudy"
+                    }, {
+                        "code": "30",
+                        "date": "02 May 2016",
+                        "day": "Mon",
+                        "high": "41",
+                        "low": "34",
+                        "text": "Partly Cloudy"
+                    }, {
+                        "code": "28",
+                        "date": "03 May 2016",
+                        "day": "Tue",
+                        "high": "45",
+                        "low": "34",
+                        "text": "Mostly Cloudy"
+                    }],
+                    "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/32.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Sunny\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Sun - Sunny. High: 43Low: 25\n<BR /> Mon - Partly Cloudy. High: 44Low: 29\n<BR /> Tue - Partly Cloudy. High: 47Low: 34\n<BR /> Wed - Mostly Cloudy. High: 49Low: 35\n<BR /> Thu - Partly Cloudy. High: 47Low: 33\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>",
+                    "guid": {
+                        "isPermaLink": "false"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -80,3 +80,25 @@ objConstructor.addEventListener('click', function() {
 //Funciones ---> palabra1Palabra2 (CammelCase)
 //Variables ---> palabra1_palabra2 (SnakeCase)
 //Constantes --> PALABRA1_PALABRA2
+
+$('#objJSON').click(function(){
+    $.getJSON('assets/json/productos.json',function(productos){
+        // console.log(productos);
+        var totalProductos = productos.length;
+        for (var i = 0; i < totalProductos; i++) {
+            console.log('Nombre:',productos[i].nombre);
+        }
+    });
+});
+
+$('#jsonWeather').click(function(){
+     /**
+     * [Fuente: https://developer.yahoo.com/weather/]
+     * @type {String}
+     * url_clima='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
+     */
+    url_clima='assets/json/clima.json';
+    $.getJSON(url_clima,function(clima){
+        console.log(clima);
+    });
+});
