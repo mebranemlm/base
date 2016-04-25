@@ -105,3 +105,17 @@ $('#jsonWeather').click(function(){
         console.log(clima);
     });
 });
+
+//JOIN vs CONCAT
+
+$('#fnJoinAndConcat').click(function(){
+
+    var pais = ['Mexico', 'España', 'Argentina', 'Chile', 'Colombia', 'Venezuela', 'Perú', 'Costa Rica'];
+    
+    console.log('Ejemplo JOIN');
+    console.log(pais.join(', '));
+
+    console.log('Ejemplo CONCAT');
+    console.log(pais.concat(', '));
+
+});
