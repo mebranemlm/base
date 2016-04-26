@@ -8,3 +8,13 @@ var a348944323 = 'Variable Con Números';
 //Variable Undefined
 var variable;
 console.log(variable === undefined);
+
+//IndexOf y CharAt
+var texto1='hola mundo';
+var texto2='hola Mundo';
+var texto3='hola MUNDO MUNDO';
+
+var busqueda='MUNDO';
+console.log(texto3.indexOf(busqueda));
+
+console.log(texto3.charAt(5));
