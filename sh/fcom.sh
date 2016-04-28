@@ -1,6 +1,5 @@
 #!/bin/bash
-# scriptname mensaje
 git add -A
-git commit -m '$mensaje'
+git commit -m "$1"
 git push -f --all
 exit 0
