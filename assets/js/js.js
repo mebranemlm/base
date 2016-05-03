@@ -1,7 +1,18 @@
 
 var $f={
 	a: {
+		/**
+		 * [Objeto con diversas funciones y variables
+		 * referentes a los enlaces externos]
+		 * @type {Object}
+		 */
 		external: {
+			/**
+			 * Función que edita los targets de los enlaces
+			 * externos que no tengan uno definido
+			 * @param  {string} $target [Valor que se asignará a los targets]
+			 * @return {[type]}         [description]
+			 */
 			target: function($target){
 				if(typeof $target=='undefined'){
 					$target='_blank';
@@ -22,16 +33,12 @@ var $f={
 			targets: ['_blank','_self','_parent','_top','framename']
 		}
 	},
-	url:{
-		isAbsolute: function(url){
-			var r = new RegExp('^(?:[a-z]+:)?//', 'i');
-			return r.test(url);
-		},
-		host: function (url) {
-  			return url.toString().replace(/^(.*\/\/[^\/?#]*).*$/,"$1");
-		}
-
-	},
+	/**
+	 * Función que devuelve la función prototipo
+	 * a partir de un objeto
+	 * @param  {object} $obj [Objeto con las propiedades que tendrá el prototipo]
+	 * @return {function}      [función prototipo]
+	 */
 	prototype: function($obj){
 		function fun($obj){
 			for (var index in $obj){
@@ -42,6 +49,26 @@ var $f={
 		}
 		fun.prototype=$obj;
 		return fun;
+	},
+
+	url:{
+		/**
+		 * Devuelve el Host de una url
+		 * @param  {string} $url [La url a evaluar]
+		 * @return {string}     [El host de la url]
+		 */
+		host: function ($url) {
+  			return $url.toString().replace(/^(.*\/\/[^\/?#]*).*$/,"$1");
+		},
+		/**
+		 * Valida si la url es absoluta o relativa
+		 * @param  {string}  $url [La url a evaluarse]
+		 * @return {Boolean}      [True si es absoluta, False si no lo es]
+		 */
+		isAbsolute: function($url){
+			var r = new RegExp('^(?:[a-z]+:)?//', 'i');
+			return r.test($url);
+		}
 	}
 };
 
