@@ -133,6 +133,8 @@ var oPersona={
 		return 'Buenas noches, '+this.nombre+' '+this.apellido;
 	}
 };
+
+
 $('#prototype').click(function(){
 	// function Persona(nombre,apellido){
 	// 	this.nombre= nombre;
@@ -161,6 +163,13 @@ $('#prototype').click(function(){
 			console.log(index+':',ret);
 		}
 	}
+});
+
+//MENSAJES
+
+$('#alert').click(function(){
+	var input=prompt('Ingrese valor','');
+	console.log(input);
 });
 
 // $('#').click(function(){

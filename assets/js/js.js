@@ -69,9 +69,42 @@ var $f={
 			var r = new RegExp('^(?:[a-z]+:)?//', 'i');
 			return r.test($url);
 		}
+	},
+	math:{
+		isInt: function($n){
+			return Number($n) === $n && $n % 1 === 0;
+		},
+		isFloat: function($n){
+			return Number($n) === $n && $n % 1 !== 0;
+		},
+		isNumber: function($n){
+			return Number($n) === $n;
+		},
+		random:function($obj){
+			$min=$obj.min;
+			$max=$obj.max;
+			$type=$obj.type;
+			if(typeof $min !='undefined' && $f.math.isNumber($min) && typeof $max !='undefined' && $f.math.isNumber($max)){
+				
+				var res= Math.random()*($max-$min)+$min;
+				if(typeof $type!='undefined' && $type.toLowerCase() ==='int'){
+					return parseInt(res);
+				}
+				return res;
+			}else{
+				return Math.random();
+			}
+
+		}
 	}
 };
 
 
 $f.a.external.target();
+
+// console.log($f.math.random({
+// 	min: 1, 
+// 	max: 1000,
+// 	type: 'int'
+// }));
 
