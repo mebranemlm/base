@@ -110,6 +110,46 @@ $('#arrJoin').click(function(){
 	console.log(x);
 });
 
+var arr=[1,2,3,4,5,6,7,8,9,10];
+$('#arrFilter').click(function(){
+	console.log(arr);
+	var filt=arr.filter(function(num){
+		return num%2==0;
+	});
+
+	console.log(filt);
+});
+
+$('#arrMap').click(function(){
+	console.log(arr);
+	var map=arr.map(function(num){
+		return num*num;
+	});
+
+	console.log(map);
+});
+
+$('#arrForEach').click(function(){
+	console.log('array',arr);
+	arr.forEach(function(el,pos,arr){
+		console.log('el',el,'pos',pos,'arr',arr);
+	});
+});
+
+ var letras=['H','o','l','a',' ','M','u','n','d','o'];
+
+$('#arrReduce').click(function(){
+	var palabra=letras.reduce(function(prev,act,pos,arr){
+ 		console.log(pos, prev,act);
+ 		return prev+act;
+ 	});
+ 	console.log(palabra);
+});
+
+
+
+
+
 //FUNCIONES
 
 $('#anonym').click(function(){
@@ -170,6 +210,22 @@ $('#prototype').click(function(){
 $('#alert').click(function(){
 	var input=prompt('Ingrese valor','');
 	console.log(input);
+});
+
+//MANIPULANDO EL DOM
+$('#dom').click(function(){
+	var btn=document.querySelectorAll('button');
+	//console.log(btn);
+	for (var index in btn){
+		//console.log(this.classList.length);
+		if(this.classList.length==0){
+			console.log(this.className);
+			this.className=this.className+' btn-azul';
+		}else{
+			this.classList.add('btn-azul');
+		}
+	}
+
 });
 
 // $('#').click(function(){
