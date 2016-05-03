@@ -228,6 +228,48 @@ $('#dom').click(function(){
 
 });
 
+$('#tmpString').click(function(){
+
+	tagged`Suma
+	${2+1}
+	Resta
+	${2-1}
+	`;
+
+	function tagged($str,$var,$var2){
+	console.log('string',$str);
+	console.log('var',$var,$var2);
+	}
+
+	tmpString=`Suma
+	${2+1}
+	Resta
+	${2-1}
+	`;
+
+	console.log('tmpString',tmpString);
+});
+
+
+$('#arrArrow').click(function(){
+
+console.log(arr);
+
+arr2=arr.map(n => n*n);
+arr3=arr.map(n => {
+	var m=n+1;
+	return m*2;
+});
+
+console.log(arr2);
+console.log(arr3);
+});
+
+$('button[id]').each(function(){
+	var id=$(this).attr('id');
+	$(this).text(id);
+});
+
 // $('#').click(function(){
 
 // });

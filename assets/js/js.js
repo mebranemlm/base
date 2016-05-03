@@ -72,13 +72,13 @@ var $f={
 	},
 	math:{
 		isInt: function($n){
-			return Number($n) === $n && $n % 1 === 0;
+			return Number($n) == $n && $n % 1 === 0;
 		},
 		isFloat: function($n){
-			return Number($n) === $n && $n % 1 !== 0;
+			return Number($n) == $n && $n % 1 !== 0;
 		},
 		isNumber: function($n){
-			return Number($n) === $n;
+			return Number($n) == $n;
 		},
 		random:function($obj){
 			$min=$obj.min;
@@ -101,6 +101,24 @@ var $f={
 
 
 $f.a.external.target();
+$('#stopRefresh').click(function(){
+	var refresh=$('meta[http-equiv=refresh]');
+	var content=refresh.attr('content');
+	console.log(content);
+	if($f.math.isNumber(content)){
+		console.log('Es número');
+		refresh.removeAttr('http-equiv');
+		refresh.removeAttr('content');
+		//refresh.attr('http-equiv','');
+		console.log($('meta[http-equiv=refresh]').attr('http-equiv'));
+		console.log($('meta[http-equiv=refresh]').attr('content'));
+	}else{
+		console.log('No es número');
+		// refresh.attr('http-equiv','re');
+		 refresh.attr('http-equiv','refresh');
+	}
+});
+
 
 // console.log($f.math.random({
 // 	min: 1, 
