@@ -120,6 +120,49 @@ $('#anonym').click(function(){
 
 });
 
+//PROTOTIPOS
+
+var oPersona={
+	id: 0,
+	nombre: 'Anónimo',
+	apellido: 'Anónimo',
+	saludo: function(){
+		return 'Buenos días, '+this.nombre +' ' +this.apellido;
+	},
+	despedida:function(){
+		return 'Buenas noches, '+this.nombre+' '+this.apellido;
+	}
+};
+$('#prototype').click(function(){
+	// function Persona(nombre,apellido){
+	// 	this.nombre= nombre;
+	// 	this.apellido=apellido;
+	// }
+	// Persona.prototype=protPersona;
+
+	// var Juan = new Persona('Juan');
+	// var fun = $f.prototype(protPersona);
+	var Juan = new ($f.prototype(oPersona))({
+		nombre: 'Juan',
+		apellido: 'Pérez',
+		id:1,
+		direccion:'Av. 28 de Julio 9283'
+	});
+
+
+	// Juan.saludo();
+	for (var index in Juan){
+		if(typeof Juan[index] !='function'){
+			console.log(index+':',Juan[index]);
+		}
+		
+		else{
+			var ret=(Juan[index])();
+			console.log(index+':',ret);
+		}
+	}
+});
+
 // $('#').click(function(){
 
 // });

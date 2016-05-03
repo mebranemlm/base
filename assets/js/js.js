@@ -31,6 +31,17 @@ var $f={
   			return url.toString().replace(/^(.*\/\/[^\/?#]*).*$/,"$1");
 		}
 
+	},
+	prototype: function($obj){
+		function fun($obj){
+			for (var index in $obj){
+				if(typeof $obj[index]!='undefined'){
+					this[index]=$obj[index];
+				}
+			}
+		}
+		fun.prototype=$obj;
+		return fun;
 	}
 };
 
