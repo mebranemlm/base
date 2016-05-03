@@ -110,6 +110,16 @@ $('#arrJoin').click(function(){
 	console.log(x);
 });
 
+//FUNCIONES
+
+$('#anonym').click(function(){
+
+	(function(a,b,c){
+		console.log(a,b,c);
+	})('d','e','f')
+
+});
+
 // $('#').click(function(){
 
 // });
