@@ -27,7 +27,7 @@ var $f={
 			var r = new RegExp('^(?:[a-z]+:)?//', 'i');
 			return r.test(url);
 		},
-	host: function (url) {
+		host: function (url) {
   			return url.toString().replace(/^(.*\/\/[^\/?#]*).*$/,"$1");
 		}
 
@@ -36,6 +36,4 @@ var $f={
 
 
 $f.a.external.target();
-
-// $('a').attr('target','_blank');
 
