@@ -6,6 +6,6 @@ function $(q){
 }
 
 $('#remover').addEventListener('click',function(){
-	 let els=document.querySelectorAll('button');
+	 let els=document.querySelectorAll('div>.hijos');
 	$f.dom.removeNode.first(els);
 });
