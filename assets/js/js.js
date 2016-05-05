@@ -55,6 +55,26 @@ var $f={
 	dom: {
 		br: function(){
 			return document.createElement('br');
+		},
+		removeNode:{
+			remove:function(els,wich){
+				let len=els.length;
+				if(len>0){
+					let parent=els.item(0).parentNode;
+					let i=len-1;
+					if(typeof wich != 'undefined' && wich=='first'){
+						i=0;
+					}
+					
+					parent.removeChild(els.item(i));
+				}
+			},
+			first: function(els){
+				$f.dom.removeNode.remove(els,'first');
+			},
+			last: function(els){
+				$f.dom.removeNode.remove(els,'last');
+			}
 		}
 	},
 	/**
