@@ -1,5 +1,12 @@
 
 var $f={
+	$:function(q){
+		let el=document.querySelector(q);
+		el.propendChild=function(e){
+			el.insertBefore(e,el.firstChild);
+		}
+		return el;
+	},
 	a: {
 		/**
 		 * [Objeto con diversas funciones y variables
@@ -19,18 +26,34 @@ var $f={
 				}
 				var main_url=document.location.href;
 				var main_host=$f.url.host(main_url);
-				$('a[href]').each(function(){
-					var el=$(this);
-					var url = el.attr('href');
-					var target= el.attr('target');
+				let a=document.querySelectorAll('a[href]');
+				for (var i = 0; i < a.length; i++) {
+					var el=a[i];
+					var url = el.getAttribute('href');
+					// console.log(url);
+					var target= el.getAttribute('target');
 					var host= $f.url.host(url);
-					if($f.url.isAbsolute(url) && main_host!=host && (typeof target=='undefined' || $f.a.targets.indexOf(target)<0)){
-						// console.log('Es absoluta y tiene un dominio diferente');
-						el.attr('target',$target);
+					if($f.url.isAbsolute(url) && main_host!=host && (typeof target=='undefined' || target==null || $f.a.targets.indexOf(target)<0)){
+						el.setAttribute('target',$target);
 					}
-				});
+				}
+				// $('a[href]').each(function(){
+				// 	var el=$(this);
+				// 	var url = el.attr('href');
+				// 	var target= el.attr('target');
+				// 	var host= $f.url.host(url);
+				// 	if($f.url.isAbsolute(url) && main_host!=host && (typeof target=='undefined' || $f.a.targets.indexOf(target)<0)){
+				// 		// console.log('Es absoluta y tiene un dominio diferente');
+				// 		el.attr('target',$target);
+				// 	}
+				// });
 			},
 			targets: ['_blank','_self','_parent','_top','framename']
+		}
+	},
+	dom: {
+		br: function(){
+			return document.createElement('br');
 		}
 	},
 	/**
@@ -101,23 +124,24 @@ var $f={
 
 
 $f.a.external.target();
-$('#stopRefresh').click(function(){
-	var refresh=$('meta[http-equiv=refresh]');
-	var content=refresh.attr('content');
-	console.log(content);
-	if($f.math.isNumber(content)){
-		console.log('Es número');
-		refresh.removeAttr('http-equiv');
-		refresh.removeAttr('content');
-		//refresh.attr('http-equiv','');
-		console.log($('meta[http-equiv=refresh]').attr('http-equiv'));
-		console.log($('meta[http-equiv=refresh]').attr('content'));
-	}else{
-		console.log('No es número');
-		// refresh.attr('http-equiv','re');
-		 refresh.attr('http-equiv','refresh');
-	}
-});
+
+// $('#stopRefresh').click(function(){
+// 	var refresh=$('meta[http-equiv=refresh]');
+// 	var content=refresh.attr('content');
+// 	console.log(content);
+// 	if($f.math.isNumber(content)){
+// 		console.log('Es número');
+// 		refresh.removeAttr('http-equiv');
+// 		refresh.removeAttr('content');
+// 		//refresh.attr('http-equiv','');
+// 		console.log($('meta[http-equiv=refresh]').attr('http-equiv'));
+// 		console.log($('meta[http-equiv=refresh]').attr('content'));
+// 	}else{
+// 		console.log('No es número');
+// 		// refresh.attr('http-equiv','re');
+// 		 refresh.attr('http-equiv','refresh');
+// 	}
+// });
 
 
 // console.log($f.math.random({

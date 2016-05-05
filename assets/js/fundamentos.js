@@ -265,11 +265,42 @@ console.log(arr2);
 console.log(arr3);
 });
 
+$('#class').click(function(){
+	'use strict';
+	// class Humano{
+
+	// }
+	// class Tutor extends Humano{
+	class Tutor {
+		constructor(nombre, apellido){
+			this.nombre=nombre;
+			this.apellido=apellido;
+		}
+
+		fullName(){
+			return this.apellido+' '+this.nombre;
+		}
+	}
+
+	var tutor=new Tutor('José','Pérez');
+	console.log(tutor);
+	console.log(tutor.fullName());
+});
+
+$('#let').click(function(){
+	var letNombre='José';
+	console.log('ini',letNombre);
+	if(true){
+		let letNombre='Juan';
+		console.log('dentro',letNombre);
+	}
+	console.log('fuera',letNombre);
+});
+
 $('button[id]').each(function(){
 	var id=$(this).attr('id');
 	$(this).text(id);
 });
-
 // $('#').click(function(){
 
 // });

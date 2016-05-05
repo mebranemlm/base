@@ -1,3 +1,57 @@
+var qInput='input[type=email][name="emails[]"]';
+function inputEmail(){
+	let input=document.createElement('input');
+	input.setAttribute('type','email');
+	input.setAttribute('name','emails[]');
+	let inputs=document.querySelectorAll(qInput);
+	let length=inputs.length;
+	input.setAttribute('title','email-'+length)
+	input.setAttribute('i',length);
+	input.setAttribute('placeholder','Email N° '+(length+1));
+	return input;
+}
+
+var input = inputEmail();
+var btnMore=document.createElement('button');
+btnMore.setAttribute('name','btnMore');
+btnMore.innerHTML='+';
+
+var btnLess=document.createElement('button');
+btnLess.setAttribute('name','btnLess');
+btnLess.innerHTML='-';
+
+var br=$f.dom.br();
+
+//var div=document.querySelector('#emails');
+//console.log($f.$);
+var div =$f.$('#emails');
+div.appendChild(btnMore);
+div.appendChild(btnLess);
+div.appendChild(br);
+div.appendChild(input);
+
+btnMore.addEventListener('click',function(){
+	// console.log(qInput);
+	let inputs=document.querySelectorAll(qInput);
+	if(inputs.length<10){
+		let input=inputEmail();
+		div.propendChild(input);
+	}
+});
+// console.log(qInput);
+btnLess.addEventListener('click',function(){
+	let inputs=document.querySelectorAll(qInput);
+	let q=`${qInput}[i="${inputs.length-1}"]`;
+	// q=q.toString();
+	let input=document.querySelector(q);
+	if(input!=null && inputs.length>1){
+		div.removeChild(input);
+	}
+});
+
+// var input= $f.dom.input();
+// console.log(input);
+
 var i=0;
 $('span.index').each(function(){
 	i++;
