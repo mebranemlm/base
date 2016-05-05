@@ -29,7 +29,8 @@ var $f={
 				let a=document.querySelectorAll('a[href]');
 				for (var i = 0; i < a.length; i++) {
 					var el=a[i];
-					var url = el.getAttribute('href');
+					// var url = el.getAttribute('href');
+					var url = el.href;
 					// console.log(url);
 					var target= el.getAttribute('target');
 					var host= $f.url.host(url);
