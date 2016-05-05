@@ -8,3 +8,8 @@ button{
 .btn-azul{
 	color:blue;
 }
+
+sup { 
+    vertical-align: super;
+    font-size: smaller;
+}
