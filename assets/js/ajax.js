@@ -114,7 +114,7 @@ function test(funcion){
 
 function ajax_jq(){
 	$.ajax({
-		url: 'http://localhost:8000/ba se/data.php',
+		url: 'http://localhost:8000/base/data.php',
 		type: 'post',
 		data: {
 			data: 4123
@@ -122,6 +122,8 @@ function ajax_jq(){
 	}).done(function(res){
 		let cont=document.getElementById('cont');
 		cont.innerHTML=res;
+		let btn=document.getElementById('ajaxjq');
+		btn.setAttribute('disabled','');
 	}).fail(function(error){
 		console.log(error.statusText);
 		alert('Ocurrió un error.');
