@@ -54,14 +54,15 @@ function onLoad(){
 	data=new Array();
 }
 
-function test(){
+function test(funcion){
 	let request=new requestAjax();
 	let response=false;
 	
 	let data=null;
-	request.onreadystatechange =function(){
+	request.onreadystatechange =function(funcion){
 		if(request.readyState==4 && request.status==200){
 			let xml;
+			//funcion(xml);
 			if(this.responseXML == null){
 				xml=parseXml(this.responseText);
 				// console.log('responseXML=null',this.responseText);
@@ -82,11 +83,13 @@ function test(){
 				//console.log(xml);
 				cont.innerHTML=xml;
 				//response=xml;
+				//funcion(xml);
 
 			}catch(e){
 				console.log(e);
 				let cont=document.getElementById('cont');
 				let err=xml.documentElement.getElementsByTagName('body').item(0).innerHTML;
+				//funcion(err);
 				cont.innerHTML=err;
 				//response=err;
 			}
@@ -102,4 +105,27 @@ function test(){
 	//return response;
 }
 
+// var x=test(function(res){
+// console.log(res);
+// });
 //console.log(test());
+//
+//
+
+function ajax_jq(){
+	$.ajax({
+		url: 'http://localhost:8000/ba se/data.php',
+		type: 'post',
+		data: {
+			data: 4123
+		}
+	}).done(function(res){
+		let cont=document.getElementById('cont');
+		cont.innerHTML=res;
+	}).fail(function(error){
+		console.log(error.statusText);
+		alert('Ocurrió un error.');
+	}).always(function(){
+		console.log('Ajax Ejecutado');
+	});
+}
