@@ -7,5 +7,5 @@ function $(q){
 
 $('#remover').addEventListener('click',function(){
 	 let els=document.querySelectorAll('div>.hijos');
-	$f.dom.removeNode.first(els);
+	$f.dom.node.remove.last(els);
 });

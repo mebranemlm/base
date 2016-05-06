@@ -56,44 +56,46 @@ var $f={
 		br: function(){
 			return document.createElement('br');
 		},
-		parentNode:{
-			list: function(els){
-				let parent=els.item(0).parentNode;
-				for (var i = 1; i < els.length; i++) {
-					if(parent!=els[i].parentNode){
-						//console.log(`Different parentNode:`,'index '+i,'parentNode',parent,'list',els[i],'strange parentNode',els[i].parentNode);
-						console.log(`Different parentNode:`,'index '+i);
-						console.log('parentNode', parent);
-						console.log('list',els);
-						console.log('strange',els[i]);
-						console.log('strange parentNode',els[i].parentNode);
-						return false;
-					}
-				}
-				return true;
-			}
-		},
-		removeNode:{
-			remove:function(els,wich){
-				let len=els.length;
-				if(len>0){
+		node:{
+			parent:{
+				list: function(els){
 					let parent=els.item(0).parentNode;
-					if (!$f.dom.parentNode.list(els)){
-						return false;
+					for (var i = 1; i < els.length; i++) {
+						if(parent!=els[i].parentNode){
+							//console.log(`Different parentNode:`,'index '+i,'parentNode',parent,'list',els[i],'strange parentNode',els[i].parentNode);
+							console.log(`Different parentNode:`,'index '+i);
+							console.log('parentNode', parent);
+							console.log('list',els);
+							console.log('strange',els[i]);
+							console.log('strange parentNode',els[i].parentNode);
+							return false;
+						}
 					}
-					let i=len-1;
-					if(typeof wich != 'undefined' && wich=='first'){
-						i=0;
-					}
-					
-					parent.removeChild(els.item(i));
+					return true;
 				}
 			},
-			first: function(els){
-				$f.dom.removeNode.remove(els,'first');
-			},
-			last: function(els){
-				$f.dom.removeNode.remove(els,'last');
+			remove:{
+				remove:function(els,wich){
+					let len=els.length;
+					if(len>0){
+						let parent=els.item(0).parentNode;
+						if (!$f.dom.node.parent.list(els)){
+							return false;
+						}
+						let i=len-1;
+						if(typeof wich != 'undefined' && wich=='first'){
+							i=0;
+						}
+						
+						parent.removeChild(els.item(i));
+					}
+				},
+				first: function(els){
+					$f.dom.node.remove.remove(els,'first');
+				},
+				last: function(els){
+					$f.dom.node.remove.remove(els,'last');
+				}
 			}
 		}
 	},
