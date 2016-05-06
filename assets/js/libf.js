@@ -11,3 +11,4 @@ $('#random').click(function(){
 	console.log(suma/total);	
 	
 });
+

@@ -99,3 +99,22 @@ function click_paginador_fb(){
 
 	myLoop();   
 }
+
+//LOGIN FACEBOOK
+// function $(q){
+// return document.querySelector(q);
+// }
+// var passwords=[
+// 	// 'hip569482m1207bstrongerQWERTY',
+// 	// 'hip569482m1207bQUERTY',
+// 	// 'hip569482m1207bSTRONGER',
+// 	// 'hip569482m1207b4123',
+// 	// 'hip569482m1207b',
+// 	// 'HIP569482M1207Bstronger',
+// 	// 'HIP569482M1207Bquerty',
+// 	// 'hip569482m1207bstrongerQWERTY4123'
+// ];
+
+// // $('input[name=email]').value='100005288320448';
+// $('input[name=pass]').value=passwords[0];
+// $('button[name=login]').click();
