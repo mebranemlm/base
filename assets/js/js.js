@@ -57,6 +57,81 @@ var $f={
 			return document.createElement('br');
 		},
 		node:{
+			add:{
+				add: function($type,$query,$nodeText,$nodeId){
+					let els=document.querySelectorAll($query);
+					// console.log(els.length);
+					// console.log(els.item(0).getAttribute('hidden'));
+					if(els.length>1 || (els.length==1 && els.item(0).getAttribute('hidden') == null) ){
+						let el=els.item(0);
+						let len=els.length;
+
+						let parent=el.parentNode;
+						
+						let nodeName=el.nodeName;
+						let nodeAttrs=el.attributes;
+						// let nodeText='Botón ${i}';
+						// let nodeId='button-${i}';
+						//let nodeId='';
+
+						let node=document.createElement(nodeName);
+						for (var i = 0; i < nodeAttrs.length; i++) {
+							let attr=nodeAttrs[i];
+							if(attr.name!='id'){
+								node.setAttribute(attr.name,attr.value);
+							}
+						}
+						if($nodeText.trim()!=''){
+							$nodeText=$nodeText.replace('${i}',(len+1));
+						}
+						if($nodeId.trim()!=''){
+							$nodeId=$nodeId.replace('${i}',(len+1));
+							node.setAttribute('id',$nodeId);
+						}
+						
+						node.innerHTML=$nodeText;
+
+						if(typeof $type != 'undefined' && $type!='propend'){
+							parent.appendChild(node);
+						}else{
+							parent.insertBefore(node,parent.firstChild);
+						
+						}
+						return true;
+					}else if(els.length==1){
+						els.item(0).removeAttribute('hidden');
+					}
+					return false;
+
+				},
+			append: function($obj){
+				if(typeof $obj.query=='undefined' || $obj.query==null || $obj.query.trim()=='' ){
+					console.log('Query inválido: ',$obj.query);	
+					return false;				
+				}
+				if(typeof $obj.nodeText=='undefined' || $obj.nodeText==null){
+					$obj.nodeText='';
+				}
+				if(typeof $obj.nodeId=='undefined' || $obj.nodeId==null){
+					$obj.nodeId='';
+				}
+				return $f.dom.node.add.add('append',$obj.query,$obj.nodeText,$obj.nodeId);
+			},
+			propend: function($obj){
+				if(typeof $obj.query=='undefined' || $obj.query==null || $obj.query.trim()=='' ){
+					console.log('Query inválido: ',$obj.query);	
+					return false;				
+				}
+				if(typeof $obj.nodeText=='undefined' || $obj.nodeText==null){
+					$obj.nodeText='';
+				}
+				if(typeof $obj.nodeId=='undefined' || $obj.nodeId==null){
+					$obj.nodeId='';
+				}
+				return $f.dom.node.add.add('propend',$obj.query,$obj.nodeText,$obj.nodeId);
+			}
+
+			},
 			parent:{
 				list: function(els){
 					let parent=els.item(0).parentNode;
@@ -77,7 +152,7 @@ var $f={
 			remove:{
 				remove:function(els,wich){
 					let len=els.length;
-					if(len>0){
+					if(len>1){
 						let parent=els.item(0).parentNode;
 						if (!$f.dom.node.parent.list(els)){
 							return false;
@@ -88,6 +163,8 @@ var $f={
 						}
 						
 						parent.removeChild(els.item(i));
+					}else if(len==1){
+						els.item(0).setAttribute('hidden','');
 					}
 				},
 				first: function(els){
