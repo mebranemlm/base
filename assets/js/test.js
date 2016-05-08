@@ -1,3 +1,14 @@
+
+var arr=[];
+
+// ​function getAllMethods(obj) {
+//     return Object.getOwnPropertyNames(obj).filter(function(property) {
+//         return typeof obj[property] == 'function';
+//     });
+// }
+
+// console.log(getAllMethods(Math));
+//console.log(arr);
 //Objetos en Funciones
 
 var oEmpleado=function(){
