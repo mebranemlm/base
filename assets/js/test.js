@@ -1,3 +1,36 @@
+//Objetos en Funciones
+
+var oEmpleado=function(){
+	var nombre=null;
+	var parent=this;
+	this.estado='A';
+	this.nombre=nombre;
+	this.apellido=null;
+	this.edad=null;
+	this.setNombre=function(_nombre){
+		this.nombre=_nombre;
+	};
+
+	this.getNombre=function(){
+		return parent.nombre;
+	}
+	this.telefonos={
+		movil: '12345',
+		fijo: '54321',
+		getNombre: function(){
+			return parent.getNombre();
+		}
+	}
+
+}
+
+var Empleado1=new oEmpleado();
+Empleado1.setNombre('Pedro');
+Empleado1.apellido='Perez';
+
+//console.log(Empleado1);
+
+//Creando Nodos
 var qInput='input[type=email][name="emails[]"]';
 function inputEmail(){
 	let input=document.createElement('input');
