@@ -215,10 +215,10 @@ var $f={
 	},
 	math:{
 		isInt: function($n){
-			return Number($n) == $n && $n % 1 === 0;
+			return Number($n) == $n && $n % 1 == 0 && $n.trim()!='';
 		},
 		isFloat: function($n){
-			return Number($n) == $n && $n % 1 !== 0;
+			return Number($n) == $n && $n % 1 !== 0 && $n.trim()!='';
 		},
 		isNumber: function($n){
 			return Number($n) == $n;

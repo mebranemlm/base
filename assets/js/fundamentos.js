@@ -301,6 +301,70 @@ $('button[id]').each(function(){
 	var id=$(this).attr('id');
 	$(this).text(id);
 });
+
+
+var contador={
+    press:0,
+    down:0,
+    up:0
+}
+var blur=document.getElementById('blur');
+
+blur.addEventListener('blur',function(){
+    console.log('Blur activado');
+    this.style['background-color']='red';
+});
+
+blur.addEventListener('focus',function(){
+    console.log('Focus activado');
+    this.style['background-color']='green';
+});
+
+blur.addEventListener('keypress',function(){
+    //console.log(`Keypress activado, tecla ${this.value}`);
+    contador.press++;
+    this.style['background-color']='yellow';
+});
+
+blur.addEventListener('keydown',function(){
+    //console.log(`Keydown activado, tecla ${this.value}`);
+    contador.down++;
+    this.style['background-color']='black';
+});
+
+blur.addEventListener('keyup',function(){
+    //console.log(`Keyup activado, tecla ${this.value}`);
+    contador.up++;
+    this.style['background-color']='orange';
+});
+
+//OTROS EVENTOS
+
+document.getElementById('other_events').addEventListener('click', function(){
+	console.log(`navigator.platform: ${navigator.platform}`);
+	console.log(`others: win32, MacIntel`);
+});
+
+//MANEJO DE ERRORES
+
+$('#errors').click(function(){
+	try{
+		let numero=prompt('Mensaje');
+		if(!$f.math.isInt(numero)){
+			// console.log('No es entero');
+			throw new Error('No es un entero');
+		}
+		//console.log(numero%1==0);
+		console.log(numero);
+	}catch(e){
+		console.log(e.message);
+	}
+
+});
+
+
+//Manejo de Errores
+
 // $('#').click(function(){
 
 // });

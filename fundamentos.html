@@ -51,54 +51,15 @@
     <h4>Clases</h4>
     <button id="class"></button>
 
-    <h4>Teclas</h4>
-    <style type="text/css">
-        #blur{
-           /* width: 50px;
-            height: 50px;*/
-            background-color: blue;
-        }
-    </style>
+    <h4>Eventos Teclas</h4>
     <div id=''>
         <input type="blur" id='blur' >
     </div>
-    <script>
-        var contador={
-            press:0,
-            down:0,
-            up:0
-        }
-        var blur=document.getElementById('blur');
-
-        blur.addEventListener('blur',function(){
-            console.log('Blur activado');
-            this.style['background-color']='red';
-        });
-
-        blur.addEventListener('focus',function(){
-            console.log('Focus activado');
-            this.style['background-color']='green';
-        });
-
-        blur.addEventListener('keypress',function(){
-            //console.log(`Keypress activado, tecla ${this.value}`);
-            contador.press++;
-            this.style['background-color']='yellow';
-        });
-
-        blur.addEventListener('keydown',function(){
-            //console.log(`Keydown activado, tecla ${this.value}`);
-            contador.down++;
-            this.style['background-color']='black';
-        });
-
-        blur.addEventListener('keyup',function(){
-            //console.log(`Keyup activado, tecla ${this.value}`);
-            contador.up++;
-            this.style['background-color']='orange';
-        });
-
-    </script>
+    
+    <h4>Otros Eventos</h4>
+        <button id='other_events'></button>
+    <h4>Manejo de Errores</h4>
+        <button id='errors'></button>
 
     <script type="text/javascript" src="assets/js/js.js"></script>
     <script type="text/javascript" src="assets/js/fundamentos.js"></script>
