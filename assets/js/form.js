@@ -33,6 +33,14 @@ window.onload=function(){
 	iniciarFormulario();
 }
 
+
+
+
+
+
+
+
+
 function iniciarFormulario(){
 	for (var i = 0; i < document.forms.length; i++) {
 		//console.log(document.forms[i]);
@@ -43,35 +51,43 @@ function iniciarFormulario(){
 function validarFormulario(){
 	var todoOk=true;
 	// let tags=document.getElementById("*");
-	let tags=document.querySelectorAll("*[id]");
-	// console.log(tags);
-	// return false;
+	let tags=document.querySelectorAll("form tr>td>*");
+
+	//console.log(tags);
+
 	for (var i = 0; i < tags.length; i++) {
 		if(!validarTag(tags[i])){
 			todoOk=false;
 		}
 	}
+	//alert(todoOk);
 	return todoOk;
 
 	function validarTag(tag){
 		var sobreClass='';
 		var classes=tag.className.split(' ');
-		// console.log(classes);
+		//console.log(tag.id, classes);
 		// return false;
 		for (var i = 0; i < classes.length; i++) {
-			sobreClass += validarTipoClass(classes[i]);
+			let aux=validarTipoClass(classes[i]);
+			//console.log(tag.id,aux);
+			sobreClass += aux;
 		}
 		tag.className=sobreClass;
+		sobreClass=sobreClass.split(' ');
+		let lbl=tag.parentNode.parentNode.children[0].children[0];
 		if(sobreClass.indexOf('invalido')>-1){
 			//console.log('test');
-			invalidLabel(tag.parentNode.parentNode.children[0].children[0]);
+			invalidLabel(lbl);
 			tag.focus();
 			if(tag.nodeName=='INPUT'){
 				tag.select();
 			}
 			return false;
 		}
+		validLabel(lbl);
 		return true;
+		
 
 		function validarTipoClass(clase){
 			var classReturn='';
@@ -79,17 +95,16 @@ function validarFormulario(){
 			switch(clase){
 				case '':
 				case 'invalido':
-				classReturn='invalido';
+				//classReturn+='';
 					break;
 				case 'req':
 					if(todoOk && tag.value==''){
 						classReturn='invalido ';
-						//console.log('ES INVALIDO-----------');
 					}
-					classReturn+=clase;
+					classReturn+=clase+' ';
 					break;
 				default:
-					classReturn+=clase;
+					classReturn+=clase+' ';
 			}
 			//console.log(classReturn, tag.value);
 			return classReturn;
@@ -97,7 +112,27 @@ function validarFormulario(){
 
 		function invalidLabel(lbl){
 			//console.log(lbl);
-			lbl.style.color='red';
+			// let clases=lbl.className;
+			// clases=clases.split(' ');
+			// let pos=clases.indexOf('invalido');
+			// if(pos<0){
+			// 	lbl.className='invalido '+lbl.className;
+			// }
+			$f.dom.class.add(lbl,'invalido');
+		}
+
+		function validLabel(lbl){
+			//console.log(lbl);
+			//
+			if(lbl!=null){
+				// let c='invalido';
+				// lbl.className=lbl.className.replace(new RegExp('\\b' + c + '\\b'),'');
+				
+				$f.dom.class.remove(lbl,'invalido');
+
+
+			}
+			
 		}
 	}
 }

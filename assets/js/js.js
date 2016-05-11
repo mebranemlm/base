@@ -56,6 +56,24 @@ var $f={
 		br: function(){
 			return document.createElement('br');
 		},
+		class:{
+			add: function(el,myClass){
+				if(!$f.dom.class.has(el,myClass)){
+					el.className=`${el.className} ${myClass}`;
+				}
+			},
+			remove: function(el,myClass){
+				el.className=el.className.replace(new RegExp('\\b' + myClass + '\\b'),'');
+			},
+			has:function(el, myClass){
+				let arrClasses=el.className.split(' ');
+				let pos=arrClasses.indexOf(myClass);
+				if(pos<0){
+					return false;
+				}
+				return true;
+			}
+		},
 		node:{
 			add:{
 				add: function($type,$query,$nodeText,$nodeId){
