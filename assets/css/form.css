@@ -17,3 +17,6 @@ input[type=email],select{
 	border-radius: 5px;
 	width:300px;
 }
+.invalido{
+	border-color: red;
+}

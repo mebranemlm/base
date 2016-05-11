@@ -35,10 +35,69 @@ window.onload=function(){
 
 function iniciarFormulario(){
 	for (var i = 0; i < document.forms.length; i++) {
+		//console.log(document.forms[i]);
 		document.forms[i].onsubmit=function(){return validarFormulario();}
 	}
 }
 
 function validarFormulario(){
+	var todoOk=true;
+	// let tags=document.getElementById("*");
+	let tags=document.querySelectorAll("*[id]");
+	// console.log(tags);
+	// return false;
+	for (var i = 0; i < tags.length; i++) {
+		if(!validarTag(tags[i])){
+			todoOk=false;
+		}
+	}
+	return todoOk;
 
+	function validarTag(tag){
+		var sobreClass='';
+		var classes=tag.className.split(' ');
+		// console.log(classes);
+		// return false;
+		for (var i = 0; i < classes.length; i++) {
+			sobreClass += validarTipoClass(classes[i]);
+		}
+		tag.className=sobreClass;
+		if(sobreClass.indexOf('invalido')>-1){
+			//console.log('test');
+			invalidLabel(tag.parentNode.parentNode.children[0].children[0]);
+			tag.focus();
+			if(tag.nodeName=='INPUT'){
+				tag.select();
+			}
+			return false;
+		}
+		return true;
+
+		function validarTipoClass(clase){
+			var classReturn='';
+			//console.log(clase);
+			switch(clase){
+				case '':
+				case 'invalido':
+				classReturn='invalido';
+					break;
+				case 'req':
+					if(todoOk && tag.value==''){
+						classReturn='invalido ';
+						//console.log('ES INVALIDO-----------');
+					}
+					classReturn+=clase;
+					break;
+				default:
+					classReturn+=clase;
+			}
+			//console.log(classReturn, tag.value);
+			return classReturn;
+		}
+
+		function invalidLabel(lbl){
+			//console.log(lbl);
+			lbl.style.color='red';
+		}
+	}
 }
