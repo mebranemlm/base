@@ -30,6 +30,15 @@ window.onload=function(){
 		}
 	}
 
-
+	iniciarFormulario();
 }
 
+function iniciarFormulario(){
+	for (var i = 0; i < document.forms.length; i++) {
+		document.forms[i].onsubmit=function(){return validarFormulario();}
+	}
+}
+
+function validarFormulario(){
+
+}
