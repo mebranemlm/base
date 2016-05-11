@@ -1,0 +1,19 @@
+th>label{
+	float: right;
+}
+
+th,td{
+	padding: 4px;
+}
+
+select{
+	width: inherit;
+}
+
+button{
+	width: 50%;
+}
+input[type=email],select{
+	border-radius: 5px;
+	width:300px;
+}

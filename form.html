@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Form</title>
+	<link rel="stylesheet" href="assets/css/form.css">
+</head>
+<body>
+<h1>Form</h1>
+
+<form action="#" method="post">
+<table>
+<tr>
+	<th>
+		<label for='email'>Email</label>
+	</th>
+	<td>
+		<input type="email" id='email'>
+	</td>
+</tr>
+<tr>
+	<th>
+		<label for='email2'>Email (otra vez)</label>
+	</th>
+	<td>
+		<input type="email" id='email2'>
+	</td>
+</tr>
+<tr>
+	<th>
+		<label for='plan'>Plan</label>
+	</th>
+	<td>
+		<select id='plan'>
+			<option value="1">Plan 1</option>
+			<option value="2">Plan 2</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>
+		<label>Cobertura</label>
+	</th>
+	<td>
+		<input type="checkbox" id='individual' value="I">Individual
+		<input type="checkbox" id='familiar' value="F">Familiar
+	</td>
+</tr>
+<tr>
+	<th>
+		<label for="">Cantidad de personas:      </label>
+	</th>
+	<td>
+		<input type="radio" name='cantidad' id='r2' value="2"> 3
+		<input type="radio" name='cantidad' id='r4+' value="4+"> 5
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td>
+		<input type="submit" value="Solicitar">
+		<input type="reset" value="Restablecer">
+	</td>
+</tr>
+</table>
+</form>
+	
+	<script type="text/javascript" src="assets/js/form.js"></script>
+</body>
+</html>
