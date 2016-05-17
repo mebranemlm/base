@@ -103,6 +103,12 @@ function validarFormulario(){
 					}
 					classReturn+=clase+' ';
 					break;
+				case 'radio':
+					if(todoOk && radioElegido(tag.name)){
+						classReturn='invalido ';
+					}
+					classReturn+=clase+' ';
+					break;
 				default:
 					classReturn+=clase+' ';
 			}
