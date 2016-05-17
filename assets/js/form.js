@@ -1,4 +1,4 @@
-window.onload=function(){
+document.querySelector('#v1').addEventListener('click',function(){
 
 	var oInputs={
 		inputs: document.querySelectorAll('input'),
@@ -31,7 +31,7 @@ window.onload=function(){
 	}
 
 	iniciarFormulario();
-}
+});
 
 
 
@@ -140,5 +140,62 @@ function validarFormulario(){
 			}
 			
 		}
+	}
+}
+
+
+document.getElementById('v2').addEventListener('click',function(){
+	val2();
+});
+
+
+function val2(){
+	// console.log('val 2');
+	
+	var tags=document.querySelectorAll('form *');
+	//var labels=document.querySelectorAll('form label');
+	var sw=true;
+	for (var i in tags){
+		let tag=tags[i];
+		if(tag.nodeName=='INPUT'){
+			let label=document.querySelector(`form label[for="${tag.id}"]`);
+			console.log(tag);
+			console.log(label);
+			sw=validarInput(tag);
+			if(!sw){
+				$f.dom.class.add(tag, 'invalido');
+				$f.dom.class.add(label, 'invalido');
+
+			}else{
+				$f.dom.class.remove(tag, 'invalido');
+				$f.dom.class.remove(label, 'invalido');
+			}
+		}
+		//console.log(tags[i].nodeName);
+	}
+
+	function validarInput(input){
+		var req=input.getAttribute('required');
+		if(req==null){
+			return true;
+		}
+
+		let val=input.value.trim();
+
+		if(val!=''){
+			let type=input.type.toLowerCase();
+			let sw=false;
+			switch(type){
+				case null: 
+				case 'text': sw=true; 
+					break;
+				case 'email': sw=$f.validate.isEmail(val); 
+					break;
+
+			}
+
+			return sw;
+		}
+		return false;
 	}
 }

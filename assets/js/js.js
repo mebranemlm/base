@@ -63,7 +63,9 @@ var $f={
 				}
 			},
 			remove: function(el,myClass){
-				el.className=el.className.replace(new RegExp('\\b' + myClass + '\\b'),'');
+				if(el!=null){
+					el.className=el.className.replace(new RegExp('\\b' + myClass + '\\b'),'');
+				}
 			},
 			has:function(el, myClass){
 				let arrClasses=el.className.split(' ');
@@ -256,6 +258,12 @@ var $f={
 				return Math.random();
 			}
 
+		}
+	},
+	validate: {
+		isEmail: function(email){
+			 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    		 return re.test(email);
 		}
 	}
 };

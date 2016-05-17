@@ -15,7 +15,7 @@
 		<label for='email'>Email</label>
 	</th>
 	<td>
-		<input type="email" id='email' class="req email">
+		<input type="email" id='email' class="req email" required>
 	</td>
 </tr>
 <tr>
@@ -39,11 +39,11 @@
 </tr>
 <tr>
 	<th>
-		<label>Cobertura</label>
+		<label for='cobertura'>Cobertura</label>
 	</th>
 	<td>
-		<input type="checkbox" id='individual' value="I">Individual
-		<input type="checkbox" id='familiar' value="F">Familiar
+		<input type="checkbox" name='cobertura' id='individual' value="I">Individual
+		<input type="checkbox" name='cobertura' id='familiar' value="F">Familiar
 	</td>
 </tr>
 <tr>
@@ -60,10 +60,14 @@
 	<td>
 		<input type="submit" value="Solicitar">
 		<input type="reset" value="Restablecer">
+
 	</td>
 </tr>
 </table>
 </form>
+
+		<button id='v1'>Activar Validacion 1</button>
+		<button id='v2'>Activar Validacion 2</button>
 	
 	<script type="text/javascript" src="assets/js/js.js"></script>
 	<script type="text/javascript" src="assets/js/form.js"></script>
