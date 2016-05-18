@@ -52,6 +52,61 @@ var $f={
 			targets: ['_blank','_self','_parent','_top','framename']
 		}
 	},
+	cookie:{
+		add: function($cookie_obj){
+			if (typeof $cookie_obj.expires=='undefined'){
+				var fExp=new Date();
+				fExp.setMonth(fExp.getMonth()+6);
+				$cookie_obj.expires=fExp;
+			}
+
+			if(typeof $cookie_obj.path=='undefined'){
+				$cookie_obj.path='/';
+			}
+			let aux=$cookie_obj.expires;
+			$cookie_obj.expires=aux.toGMTString();
+
+			document.cookie=`${$cookie_obj['key']}=${$cookie_obj['val']};path=${$cookie_obj['path']};expires=${$cookie_obj['expires']}`;
+
+		},
+		format: {
+			object:function(){
+				let obj={};
+				let cookies=document.cookie.split('; ');
+				for (var i = 0; i < cookies.length; i++) {
+					let cookie=cookies[i].split('=');
+					obj[cookie[0]]=cookie[1];
+				}
+				return obj;
+			},
+			json: function(){
+				let obj=$f.cookie.format.object();
+				return json=JSON.stringify(obj);
+			}
+		},
+		remove: function($cookie_key){
+			//let cookie_val=$f.cookie.val($cookie_key);
+			let fDel=new Date();
+			fDel.setDate(fDel.getDate()-1);
+			document.cookie=`${$cookie_key}=;path=/;expires=${fDel.toGMTString()}`;
+		},
+		removeAll: function(){
+			let cookies=document.cookie.split('; ');
+			for (let i = 0; i < cookies.length; i++) {
+				let key=cookies[i].split('=')[0];
+				$f.cookie.remove(key);
+			}
+		},
+		val: function($cookie_key){
+			var cookies=document.cookie.split('; ');
+			for (var i = 0; i < cookies.length; i++) {
+				if($cookie_key==cookies[i].split('=')[0]){
+					return cookies[i].split('=')[1];
+				}
+			}
+			return false;
+		}
+	},
 	dom: {
 		br: function(){
 			return document.createElement('br');
