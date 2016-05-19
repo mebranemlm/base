@@ -179,31 +179,37 @@ var $f={
 					return false;
 
 				},
-			append: function($obj){
-				if(typeof $obj.query=='undefined' || $obj.query==null || $obj.query.trim()=='' ){
-					console.log('Query inválido: ',$obj.query);	
-					return false;				
-				}
-				if(typeof $obj.nodeText=='undefined' || $obj.nodeText==null){
-					$obj.nodeText='';
-				}
-				if(typeof $obj.nodeId=='undefined' || $obj.nodeId==null){
-					$obj.nodeId='';
-				}
-				return $f.dom.node.add.add('append',$obj.query,$obj.nodeText,$obj.nodeId);
-			},
-			propend: function($obj){
-				if(typeof $obj.query=='undefined' || $obj.query==null || $obj.query.trim()=='' ){
-					console.log('Query inválido: ',$obj.query);	
-					return false;				
-				}
-				if(typeof $obj.nodeText=='undefined' || $obj.nodeText==null){
-					$obj.nodeText='';
-				}
-				if(typeof $obj.nodeId=='undefined' || $obj.nodeId==null){
-					$obj.nodeId='';
-				}
-				return $f.dom.node.add.add('propend',$obj.query,$obj.nodeText,$obj.nodeId);
+				after: function($refNode,$newNode){
+						if(typeof $newNode=='string'){
+							$newNode=document.createElement($newNode);
+						}
+						$refNode.parentNode.insertBefore($newNode, $refNode.nextSibling);
+					},	
+				append: function($obj){
+					if(typeof $obj.query=='undefined' || $obj.query==null || $obj.query.trim()=='' ){
+						console.log('Query inválido: ',$obj.query);	
+						return false;				
+					}
+					if(typeof $obj.nodeText=='undefined' || $obj.nodeText==null){
+						$obj.nodeText='';
+					}
+					if(typeof $obj.nodeId=='undefined' || $obj.nodeId==null){
+						$obj.nodeId='';
+					}
+					return $f.dom.node.add.add('append',$obj.query,$obj.nodeText,$obj.nodeId);
+				},
+				propend: function($obj){
+					if(typeof $obj.query=='undefined' || $obj.query==null || $obj.query.trim()=='' ){
+						console.log('Query inválido: ',$obj.query);	
+						return false;				
+					}
+					if(typeof $obj.nodeText=='undefined' || $obj.nodeText==null){
+						$obj.nodeText='';
+					}
+					if(typeof $obj.nodeId=='undefined' || $obj.nodeId==null){
+						$obj.nodeId='';
+					}
+					return $f.dom.node.add.add('propend',$obj.query,$obj.nodeText,$obj.nodeId);
 			}
 
 			},
