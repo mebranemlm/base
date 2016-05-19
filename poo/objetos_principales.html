@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos Principales</title>
+</head>
+<body>
+<h1></h1>
+	<script type="text/javascript">
+		function $(q){
+			return document.querySelectorAll(q);
+		}
+		var title=$('title').item(0).innerHTML;
+		$('h1').item(0).innerHTML=title;
+	</script>
+	<script type="text/javascript" src="../assets/js/js.js"></script>
+	
+	<button class="br" id="clear"></button>
+	<button class="br" id="objString"></button>
+	<button class="br" id="objNumber" ></button>
+	<button class="br" id="oBoolean" ></button>
+	<button class="br" id="oArray" ></button>
+	<button class="br" id="oLit_oCon" ></button>
+	<!--<script type="text/javascript" src="assets/js/date.js"></script>-->
+
+	<script type="text/javascript">
+		
+		var btn=$('button[class=br]');
+		for (var i = 0; i < btn.length; i++) {
+			btn[i].style['min-width']='150px';
+			btn[i].style['border-radius']='5px';
+			btn[i].style['background-color'] ='#FFBA89';
+			btn[i].style['color'] ='#672F07';
+			btn[i].style['font-weight'] ='bold';
+			$f.dom.node.add.after(btn.item(i),'br');
+			$f.dom.node.add.after(btn.item(i),'br');
+			btn.item(i).innerHTML=btn.item(i).id;
+		}
+
+	
+		
+	</script>
+	<script type="text/javascript" src="../assets/js/poo/principales_objetos.js"></script>
+</body>
+</html>
