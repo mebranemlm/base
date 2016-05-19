@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookies</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function $(q){
+			return document.querySelectorAll(q);
+		}
+	</script>
+	<script type="text/javascript" src="assets/js/js.js"></script>
+	<h1>Cookies</h1>
+	<button class='br' id='date_today'>Date Today</button>
+	<button class='br' id='hour_today'>Hour Today</button>
+	<button id='add_hour'>+</button>
+	<button id='rest_hour'>-</button>
+	<div id='_hour_today'></div>
+	<script type="text/javascript" src="assets/js/date.js"></script>
+	<style type="text/css">
+		#add_hour, #rest_hour{
+			background-color: #ADFFD6;
+			border-radius: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		var btn=$('button[class=br]');
+		//console.log(btn);
+		for (var i = 0; i < btn.length; i++) {
+			btn[i].style['min-width']='150px';
+			btn[i].style['border-radius']='5px';
+			btn[i].style['background-color'] ='#FFBA89';
+			btn[i].style['color'] ='#672F07';
+			btn[i].style['font-weight'] ='bold';
+			$f.dom.node.add.after(btn.item(i),'br');
+			$f.dom.node.add.after(btn.item(i),'br');
+		}
+
+	
+	</script>
+</body>
+</html>
