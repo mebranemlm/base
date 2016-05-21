@@ -65,4 +65,4 @@ $('#oLit_oCon').item(0).onclick=function(){
 	console.log(oCon);
 }
 
-console.log(Math);
+//console.log(Math);
