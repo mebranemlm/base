@@ -1,0 +1,14 @@
+.multScr(@prop, @val){
+@{prop}: @val;
+-moz-@{prop}: @val;
+-webkit-@{prop}: @val;
+-o-@{prop}: @val;
+-ms-@{prop}: @val;
+}
+
+
+p{
+	background-color: lighten(green,60);
+	padding:5px;
+	.multScr(border-radius,10px);
+}
