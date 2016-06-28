@@ -1,5 +1,5 @@
+
 var sw=true;
-var x=$('#texto');
 $(document).ready(function(){
 	$('#accion').click(function(){
 		var x=$('#texto');
@@ -17,8 +17,11 @@ $(document).ready(function(){
 	});
 	$('button[id=accion1]:first').click(f6);
 	$('button[id=accion2]:first').click(f7);
+		$('button:');
 	inicializar();
 });
+
+
 
 var inicializar=function(){
 	var x=$('#texto');
