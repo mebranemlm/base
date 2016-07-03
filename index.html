@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es" ng-app>
+<html lang="es" ng-app="aplicacion1">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="5">
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <title>Base</title>
     <link rel="stylesheet" href="assets/css/css.css">
     <script type="text/javascript" src="assets/lib/jquery/jquery.js"></script>
@@ -12,6 +12,118 @@
 <body>
 
 	<h1>Angular</h1>
+
+	<h4>Controller</h4>
+
+	<div ng-controller="controlador3">
+		<input type="number" ng-model='cantidad'>
+		<button class="boton blanco" ng-click="calcular()">Calcular</button>
+		<div class="caja">
+			<div class="cabeza">Precio</div>
+			<div class="cuerpo">
+				{{ total | currency }}
+			</div>
+		</div>
+	</div>
+
+	<div ng-controller="controlador2">
+		<input type="text" ng-model="nombre" >
+	
+		<div class="caja">
+			<div class="cabeza">Nombre</div>
+			<div class="cuerpo">
+				{{ nombre }}
+			</div>
+		</div>
+	</div>
+
+
+	<div ng-controller="controlador1">
+		<input type="number" ng-model="cantidad" >
+	
+		<div class="caja">
+			<div class="cabeza">Precio Total</div>
+			<div class="cuerpo">
+				{{ cantidad * precio | currency }}
+			</div>
+		</div>
+	</div>
+
+	
+
+	<script type="text/javascript">
+		
+		// var appl= angular.module("aplicacion1", []);
+		// appl.controller(
+		// 		"controlador1",
+		// 		['$scope',
+		// 			function($scope){
+		// 				$scope.cantidad=0
+		// 				$scope.precio=100
+		// 			}
+		// 		]
+		// 	);
+
+		var app1=_ng.app('aplicacion1');
+
+		_ng.controller({
+			app:app1,
+			controller: 'controlador1',
+			function: function(_s){
+				 _s.cantidad=0
+				 _s.precio=100
+			}
+		});
+
+		_ng.controller({
+			app:app1,
+			controller: 'controlador2',
+			function: function(_s){
+				 _s.nombre='Pedro'
+			}
+		});
+
+		_ng.controller({
+			app:app1,
+			controller: 'controlador3',
+			function: function(_s){
+				 _s.precio=1000;
+				 _s.cantidad=0;
+				 _s.calcular=function(){
+				 	_s.total=_s.precio*_s.cantidad;
+				 }
+
+			}
+		});
+
+
+		// function ng_controller(obj){
+		// 		var appl= angular.module(obj.app, []);
+		// 		// console.log(obj.app);
+		// 		appl.controller(
+		// 			obj.controller,
+		// 			['$scope',
+		// 				obj.function
+		// 			]
+		// 		);
+			
+		// }
+
+
+
+	</script>
+
+	<h4>Data Binding</h4>
+	<input type="text" ng-model="nombre"  />
+	<div class="caja">
+		<div class="cabeza">
+			Nombre:
+		</div>
+		<div class="cuerpo" datares="nombre">
+			{{ nombre }}
+		</div>
+	</div>
+	
 
 
 	

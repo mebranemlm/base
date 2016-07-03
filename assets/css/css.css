@@ -1,0 +1,85 @@
+input{
+	border-radius: 5px;
+	padding: 5px;
+	margin:10px;
+}
+.caja{
+	min-width: 150px;
+	height: 60px;
+	border: 3px solid black;
+	text-align: center;
+	overflow: auto;
+	border-radius: 10px;
+
+}
+
+.cabeza{
+	min-width:100%;
+	min-height: 15px;
+	background-color:red;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.cuerpo{
+	width:100%;
+	background-color:white;
+	font-size: 30px;
+	font-family: Arial;
+}
+
+.boton{
+	border-radius: 5px;
+	padding: 5px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.boton.verde{
+	background-color: green;
+	color:white;
+}
+
+.boton.azul{
+	background-color: blue;
+	color:white;
+}
+
+.boton.rojo{
+	background-color: red;
+	color:white;
+}
+
+.boton.blanco{
+	background-color: white;
+	color:black;
+}
+
+.boton.negro{
+	background-color: black;
+	color:white;
+}
+
+
+
+
+@media (min-width: 601px) {
+	.caja{
+		width:400px;
+	}
+
+}
+
+@media (max-width: 600px) {
+	input{
+		width:70%;
+	}
+	.caja{
+		width:80%;
+	}
+
+	.boton{
+		width: 80%;
+	}
+
+}
