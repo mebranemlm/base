@@ -1,3 +1,4 @@
+
 input{
 	border-radius: 5px;
 	padding: 5px;
@@ -61,11 +62,33 @@ input{
 }
 
 
+.lista{
+	border: 1px solid black;
+	border-radius: 5px;
+	margin:5px;
+	padding:5px;
+	padding-left: none;
+	margin-left: none;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	list-style: none;
+	background-color: #FFFF8D;
+	min-width: 150px;
+	overflow:auto;
+}
 
+.lista .lista{
+	background-color: #FFD17B;
+
+}
 
 @media (min-width: 601px) {
 	.caja{
 		width:400px;
+	}
+	.lista{
+		max-width:400px;
 	}
 
 }
@@ -80,6 +103,9 @@ input{
 
 	.boton{
 		width: 80%;
+	}
+	.lista{
+		width:80%;
 	}
 
 }

@@ -13,7 +13,34 @@
 
 	<h1>Angular</h1>
 
-	<h4>Controller</h4>
+	<h3>Controller</h3>
+
+
+	<div ng-controller="controlador4">
+		
+		<h4>Lista de personas</h4>
+		<input type="search" ng-model="buscar"/>
+		<ul>
+			<li class="lista" ng-repeat=" persona in personas | filter:buscar">
+				<ul>
+					<li class="lista">DNI: {{persona.dni}}</li>
+					<li class="lista">Nombre: {{persona.nombre}}</li>
+					<li class="lista">Edad: {{persona.edad}}</li>
+				</ul>
+			</li>
+		</ul>
+
+
+		<h4>Lista de nombres</h4>
+		<ul>
+			<li class="lista" ng-repeat=" nombre in nombres" >
+				<span>
+					{{nombre}}
+				</span>
+			</li>
+		</ul>
+	</div>
+
 
 	<div ng-controller="controlador3">
 		<input type="number" ng-model='cantidad'>
@@ -96,6 +123,24 @@
 			}
 		});
 
+		_ng.controller({
+			app:app1,
+			controller: 'controlador4',
+			function: function(_s){
+				 _s.nombres=['Pedro','Juan','José','Luis','Alberto'];
+				 _s.personas=[
+				 	{nombre:'Pedro',dni:'82828738',edad:23},
+				 	{nombre:'Juan',dni:'88382872',edad:34},
+				 	{nombre:'José',dni:'78928374',edad:19},
+				 	{nombre:'Luis',dni:'87892837',edad:29},
+				 ];
+				 }
+
+		});
+
+
+		// var app=angular.module("aa", []]);
+		// app.controller(, , , , otherInjectables)
 
 		// function ng_controller(obj){
 		// 		var appl= angular.module(obj.app, []);
